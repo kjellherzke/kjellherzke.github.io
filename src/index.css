@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html {
+  color: theme("colors.fg");
+  background-color: theme("colors.bg");
+  font-family: "Reddit Sans", sans-serif;
+}
