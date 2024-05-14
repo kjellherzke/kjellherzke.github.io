@@ -7,7 +7,8 @@ html {
   color: theme("colors.primary");
 }
 
-button {
+button,
+.button {
   padding: 0.4rem;
   border: 1px solid theme("colors.secondary");
   background-color: theme("colors.slate");
