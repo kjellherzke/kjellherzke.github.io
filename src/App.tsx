@@ -1,4 +1,4 @@
-import { GridRepo, GridRepoAuto, GridTech } from "./Grid";
+import { GridRepoAuto } from "./Grid";
 
 function App() {
   return (
