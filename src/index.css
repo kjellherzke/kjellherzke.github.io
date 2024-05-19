@@ -5,12 +5,5 @@
 html {
   background-color: theme("colors.bg");
   color: theme("colors.primary");
-}
-
-button,
-.button {
-  padding: 0.4rem;
-  border: 1px solid theme("colors.secondary");
-  background-color: theme("colors.slate");
-  border-radius: 1rem;
+  overflow-x: hidden !important;
 }

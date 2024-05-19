@@ -1,89 +1,129 @@
-/* function App_Old() {
-  return (
-    <div className="w-full h-screen flex justify-center py-3">
-      <div className="w-3/4">
-        <div className="flex items-center justify-between mb-12">
-          <img className="w-9" src="/profile-pic.svg" />
-          <a
-            href="https://github.com/kjellherzke"
-            className="rounded-full button"
-          >
-            <img className="w-5" src="/icons/github.svg" />
-          </a>
+import { useMemo } from "react";
+
+interface ProjectInfo {
+  title: string;
+  description: string;
+  from: string;
+  to: string;
+}
+
+const projects: ProjectInfo[] = [
+  {
+    title: "Online Streaming Platform ",
+    description:
+      "PWA Streaming Website using OAuth and MongoDB, using NextJS, Zod and TailwindCSS, written in Typescript, focusing on performance and user accessibility.",
+    from: "2023",
+    to: "2023",
+  },
+  {
+    title: "Social Network Platform",
+    description:
+      "Dynamic full-stack application, using NextJS and MySQL, targeting User Experience",
+    from: "2022",
+    to: "2022",
+  },
+  {
+    title: "Client-side Web Game",
+    description:
+      "Incremental hacking game, including a self-programmed operating system interface, focusing on architectural software design, powered by React and Typescript",
+    from: "2023",
+    to: "now",
+  },
+];
+
+function TabProjects() {
+  const projectsDOM = useMemo(
+    () =>
+      projects.map((p) => (
+        <div className="mb-5">
+          <div className="flex justify-between space-x-10">
+            <p className="w-44 border-r border-r-stone-800">
+              {p.from} - {p.to}
+            </p>
+            <div className="w-full">
+              <h5 className="text-xl font-semibold mb-2">{p.title}</h5>
+              <p>{p.description}</p>
+            </div>
+          </div>
         </div>
-        <h1 className="text-3xl font-bold">Kjell,</h1>
-        <h2 className="text-3xl">full-stack developer</h2>
-        <h3 className="mt-4 mb-12">
-          As a programmer I enjoy building and architecturing software, using
-          these <a href="#technologies">technologies</a>.
-        </h3>
-        /*<h4 className="border-b text-xl pb-1 mb-3 border-b-slate text-secondary">
-          Projects
-        </h4>/
-        /*
-        <GridTech
-          data={[
-            {
-              id: "typescript",
-              color: "#004c7f",
-            },
-            {
-              id: "node",
-              color: "#00ee00",
-            },
-          ]}
-        />/
-        <h4 className="border-b text-xl pb-2 mb-6 border-b-slate text-secondary">
-          Projects
-        </h4>
-        <GridRepoAuto />
-      </div>
+      )),
+    [],
+  );
+
+  return (
+    <div className="w-full">
+      <h4 className="text-xl font-semibold mb-4 underline">projects</h4>
+      {projectsDOM}
     </div>
   );
-} */
+}
 
-function App() {
+function TabAboutMe() {
   return (
-    <div className="w-full px-40 h-screen flex items-center justify-between">
-      {/*{" "}
-      <div className="fixed top-0">
-        <div className="flex w-full items-center justify-between p-4">
-          <img className="w-9" src="/profile-pic.svg" />
-          <a
-            href="https://github.com/kjellherzke"
-            className="rounded-full button"
-          >
-            <img className="w-5" src="/icons/github.svg" />
-          </a>
-        </div>
-      </div>{" "}
-      */}
-      <div>
-        <h1 className="text-5xl mb-2 font-bold">I am Kjell Herzke,</h1>
-        <h2 className="text-4xl">a full-stack developer from Germany.</h2>
-        <h3 className="mt-4 text-xl mb-12">
-          As a programmer I enjoy developing and designing software, using these{" "}
-          <a href="#technologies">technologies</a>. <br />
-          Furthermore I admire <span className="highlight">
-            mathematics
-          </span>, <span className="highlight">natural science</span> &{" "}
-          <span className="highlight">(non-computer) languages</span>.
-        </h3>
-      </div>
-      <div>
-        <img className="w-52" src="/favicon.svg" alt="Kjell Herzke Avatar" />
-        <div className="flex mt-4 items-center justify-center space-x-2">
-          <a
-            href="https://github.com/kjellherzke"
-            className="rounded-full button"
-            aria-label="Visit my Github profile"
-          >
-            <img className="w-5" src="/icons/github.svg" alt="Github Icon" />
-          </a>
-        </div>
+    <div className="w-full mb-24">
+      {/* Important margin-bottom for right design */}
+      <h4 className="text-xl font-semibold mb-4 underline">about me</h4>
+      <h3 className="mb-7">
+        I am Kjell Herzke, a Full Stack Developer blending creativity with
+        scalability to bring visually stunning and high-performing digital
+        solutions to life, combining my technical expertise with a keen interest
+        to drive innovation in projects.
+      </h3>
+      <div className="flex space-x-1 items-center">
+        <button className="px-4 py-2 mr-2 bg-white text-black rounded-full">
+          Get in touch
+        </button>
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24"
+          className="w-6 h-6 text-green-500"
+        >
+          <circle r="6" cx="12" cy="12" fill="currentColor" />
+        </svg>
+        <span>Available</span>
       </div>
     </div>
   );
 }
 
-export default App;
+/* function TabSkills() {
+  return (
+    <div className="w-full">
+      <h3 className="text-xl font-semibold mb-4 underline">skills</h3>
+      <p>- not implemented yet -</p>
+    </div>
+  );
+} */
+
+export default function App() {
+  return (
+    <div className="px-10 py-4">
+      <div className="flex justify-between items-center">
+        <span className="underline">kjell.herzke</span>
+        {/* <img src="/favicon.svg" className="w-6 h-6" /> */}
+        <div className="flex space-x-1 items-center">
+          <a
+            href="https://github.com/kjellherzke"
+            target="_blank"
+            aria-label="Github profile"
+          >
+            <img src="/icons/github.svg" className="w-6" alt="Github" />
+          </a>
+        </div>
+      </div>
+      <h1 className="text-5xl md:text-7xl font-bold mt-[13rem] md:mt-[18rem] mb-4">
+        kjell herzke
+      </h1>
+      <h2 className="text-2xl md:text-4xl font-medium w-[40rem] mb-[10rem] md:mb-[18rem]">
+        fullstack software developer
+      </h2>
+      <div className="flex flex-col-reverse md:flex-row justify-between space-x-0 space-y-16 md:space-x-16 md:space-y-0 w-full">
+        <TabProjects />
+        <div className="w-full">
+          <TabAboutMe />
+          {/* <TabSkills /> */}
+        </div>
+      </div>
+    </div>
+  );
+}
