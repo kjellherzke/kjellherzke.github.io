@@ -71,7 +71,7 @@ function App() {
         </h3>
       </div>
       <div>
-        <img className="w-52" src="/profile-pic.svg" />
+        <img className="w-52" src="/favicon.svg" />
         <div className="flex mt-4 items-center justify-center space-x-2">
           <a
             href="https://github.com/kjellherzke"
