@@ -71,13 +71,14 @@ function App() {
         </h3>
       </div>
       <div>
-        <img className="w-52" src="/favicon.svg" />
+        <img className="w-52" src="/favicon.svg" alt="Kjell Herzke Avatar" />
         <div className="flex mt-4 items-center justify-center space-x-2">
           <a
             href="https://github.com/kjellherzke"
             className="rounded-full button"
+            aria-label="Visit my Github profile"
           >
-            <img className="w-5" src="/icons/github.svg" />
+            <img className="w-5" src="/icons/github.svg" alt="Github Icon" />
           </a>
         </div>
       </div>
