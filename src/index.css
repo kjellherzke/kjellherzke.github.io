@@ -3,7 +3,13 @@
 @tailwind utilities;
 
 html {
-  background-color: theme("colors.bg");
-  color: theme("colors.primary");
-  overflow-x: hidden !important;
+  @apply bg-background text-primary overflow-x-hidden scroll-smooth select-none;
+}
+
+a.active span:nth-of-type(1) {
+  @apply bg-primary w-20;
+}
+
+a.active span:nth-of-type(2) {
+  @apply text-primary;
 }
