@@ -40,6 +40,7 @@ function NavigationLinks({ links }: { links: string[] }) {
               <li key={i}>
                 <a
                   className={`flex group items-center${activeLink == l || (!activeLink && i == 0) ? " active" : ""}`}
+                  aria-label={l.replace("-", " ")}
                   href={"#" + l}
                 >
                   <span className="bg-secondary transition-all inline-block w-12 mr-4 h-[1px]"></span>
@@ -135,7 +136,10 @@ export default function App() {
           className="flex items-center space-x-4 mb-12 text-secondary font-semibold hover:bg-secondary hover:bg-opacity-10 p-3 rounded-xl"
         >
           <span>Find more about on</span>
-          <a href="https://github.com/kjellherzke">
+          <a
+            href="https://github.com/kjellherzke"
+            aria-label="Github / Kjell Herzke"
+          >
             <svg
               className="text-secondary w-6"
               fill="currentColor"
