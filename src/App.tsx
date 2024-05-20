@@ -39,7 +39,7 @@ function NavigationLinks({ links }: { links: string[] }) {
             links.map((l, i) => (
               <li key={i}>
                 <a
-                  className={`flex group items-center${activeLink == l ? " active" : ""}`}
+                  className={`flex group items-center${activeLink == l || (!activeLink && i == 0) ? " active" : ""}`}
                   href={"#" + l}
                 >
                   <span className="bg-secondary transition-all inline-block w-12 mr-4 h-[1px]"></span>
