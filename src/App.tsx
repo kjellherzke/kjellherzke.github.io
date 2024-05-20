@@ -1,4 +1,5 @@
 import { useMemo } from "react";
+import Render from "./Render";
 
 interface ProjectInfo {
   title: string;
@@ -111,12 +112,17 @@ export default function App() {
           </a>
         </div>
       </div>
-      <h1 className="text-5xl md:text-7xl font-bold mt-[13rem] md:mt-[18rem] mb-4">
-        kjell herzke
-      </h1>
-      <h2 className="text-2xl md:text-4xl font-medium w-[40rem] mb-[10rem] md:mb-[18rem]">
-        fullstack software developer
-      </h2>
+      <div className="flex justify-between items-center relative">
+        <div>
+          <h1 className="text-5xl md:text-7xl font-bold mt-[13rem] md:mt-[18rem] mb-4">
+            kjell herzke
+          </h1>
+          <h2 className="text-2xl md:text-4xl font-medium w-[40rem] mb-[10rem] md:mb-[18rem]">
+            fullstack software developer
+          </h2>
+        </div>
+        <Render />
+      </div>
       <div className="flex flex-col-reverse md:flex-row justify-between space-x-0 space-y-16 md:space-x-16 md:space-y-0 w-full">
         <TabProjects />
         <div className="w-full">
