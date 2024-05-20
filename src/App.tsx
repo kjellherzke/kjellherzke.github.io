@@ -1,25 +1,65 @@
 import { useEffect, useMemo, useState } from "react";
-import { metaProjects } from "./meta";
+import { metaProjects, availability } from "./config";
 
 function ProjectsList() {
   return (
     <div id="projects">
       {useMemo(
         () =>
-          metaProjects.map((p, i) => (
-            <div
-              key={i}
-              className="mb-6 hover:bg-secondary hover:bg-opacity-10 p-3 hover:cursor-pointer rounded-xl"
-            >
-              <p className="font-semibold">{p.title}</p>
-              <p className="text-secondary">{p.description}</p>
-            </div>
-          )),
+          metaProjects.map((p, i) =>
+            p.linkUrl ? (
+              <a
+                href={p.linkUrl}
+                key={i}
+                className="mb-6 hover:bg-secondary hover:bg-opacity-10 p-3 rounded-xl transition-all flex space-x-3"
+              >
+                {p.logoUrl && <img className="w-14 h-14" src={p.logoUrl} />}
+                <div>
+                  <p className="font-semibold flex items-center space-x-2">
+                    <span>{p.title}</span>
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      viewBox="0 0 24 24"
+                      strokeWidth={1.5}
+                      stroke="currentColor"
+                      className="w-3 h-3"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        d="M13.19 8.688a4.5 4.5 0 0 1 1.242 7.244l-4.5 4.5a4.5 4.5 0 0 1-6.364-6.364l1.757-1.757m13.35-.622 1.757-1.757a4.5 4.5 0 0 0-6.364-6.364l-4.5 4.5a4.5 4.5 0 0 0 1.242 7.244"
+                      />
+                    </svg>
+                  </p>
+                  <p className="text-secondary">{p.description}</p>
+                </div>
+              </a>
+            ) : (
+              <div
+                key={i}
+                className="mb-6 hover:bg-secondary hover:bg-opacity-10 p-3 rounded-xl transition-all flex space-x-3"
+              >
+                {p.logoUrl && <img className="w-14 h-14" src={p.logoUrl} />}
+                <div>
+                  <p className="font-semibold flex items-center space-x-2">
+                    {p.title}
+                  </p>
+                  <p className="text-secondary">{p.description}</p>
+                </div>
+              </div>
+            ),
+          ),
         [],
       )}
     </div>
   );
 }
+
+const capitalize = (str: string) =>
+  str
+    .split(" ")
+    .map((s: string) => s.charAt(0).toUpperCase() + s.slice(1))
+    .join(" ");
 
 function NavigationLinks({ links }: { links: string[] }) {
   const [activeLink, setActiveLink] = useState(window.location.hash.substr(1));
@@ -32,7 +72,7 @@ function NavigationLinks({ links }: { links: string[] }) {
   }, []);
 
   return (
-    <nav className="mt-20 mb-96">
+    <nav className="mt-36 mb-96">
       <ul>
         {useMemo(
           () =>
@@ -43,9 +83,9 @@ function NavigationLinks({ links }: { links: string[] }) {
                   aria-label={l.replace("-", " ")}
                   href={"#" + l}
                 >
-                  <span className="bg-secondary transition-all inline-block w-12 mr-4 h-[1px]"></span>
+                  <span className="bg-secondary transition-all inline-block w-12 mr-4 h-[2px]"></span>
                   <span className="text-secondary transition-all">
-                    {l.replace("-", " ")}
+                    {capitalize(l.replace("-", " "))}
                   </span>
                 </a>
               </li>
@@ -58,7 +98,33 @@ function NavigationLinks({ links }: { links: string[] }) {
 }
 
 function AvailabilityInfo() {
-  const [isAvailable, setAvailable] = useState(true);
+  return availability ? (
+    <div className="flex space-x-2 items-center">
+      <svg
+        className="w-3 h-3 text-green-500"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="12" cy="12" r="12" fill="currentColor" />
+      </svg>
+      <span>Available</span>
+    </div>
+  ) : (
+    <div className="flex space-x-2 items-center">
+      <svg
+        className="w-3 h-3 text-red-500"
+        viewBox="0 0 24 24"
+        fill="none"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <circle cx="12" cy="12" r="12" fill="currentColor" />
+      </svg>
+      <span>Unavailable</span>
+    </div>
+  );
+
+  /*   const [isAvailable, setAvailable] = useState(true);
 
   useEffect(() => {
     fetch("https://api.github.com/users/kjellherzke")
@@ -90,7 +156,7 @@ function AvailabilityInfo() {
       </svg>
       <span>Unavailable</span>
     </div>
-  );
+  ); */
 }
 
 export default function App() {

@@ -1,6 +1,10 @@
+export const availability: boolean = true;
+
 interface MetaInfo {
   title: string;
   description: string;
+  linkUrl?: string;
+  logoUrl?: string;
   from?: string;
   to?: string;
 }
@@ -12,6 +16,13 @@ export const metaProjects: MetaInfo[] = [
       "Develop a Progressive Web Application (PWA) streaming website utilizing OAuth for authentication and MongoDB for database management. Leverage Next.js for server-side rendering, Zod for schema validation, and TailwindCSS for styling. Ensure the application is written in TypeScript, prioritizing both performance and user accessibility.",
     from: "2023",
     to: "2023",
+  },
+  {
+    title: "Nightfall Dimmed Theme",
+    description: "Dark Visual Studio Code theme with +1000 downloads",
+    linkUrl: "https://github.com/kjellherzke/nightfall-theme.git",
+    logoUrl:
+      "https://raw.githubusercontent.com/kjellherzke/nightfall-theme/main/images/icon.png",
   },
   {
     title: "Social Network Platform",
