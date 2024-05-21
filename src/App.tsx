@@ -167,7 +167,7 @@ function AvailabilityInfo() {
 
 export default function App() {
   return (
-    <div className="flex flex-col space-y-24 lg:space-y-0 lg:flex-row px-6 md:px-14 lg:px-20 xl:px-32 2xl:px-64 pt-6 md:pt-14 lg:pt-32 justify-between w-full h-full">
+    <div className="flex flex-col space-y-16 lg:space-y-0 lg:flex-row px-6 md:px-14 lg:px-20 xl:px-32 2xl:px-64 pt-6 md:pt-14 lg:pt-32 justify-between w-full h-full">
       <div className="w-full lg:w-[32rem]">
         <h1 className="text-5xl font-bold">kjell herzke</h1>
         <h2 className="text-2xl font-bold text-secondary mb-4">
@@ -177,7 +177,7 @@ export default function App() {
           I build robust and scalable software solutions that streamline
           operations and enhance user experiences.
         </h3>
-        <div className="flex space-x-8 mb-36 items-center">
+        <div className="flex space-x-8 items-center">
           <a
             href={"mailto:" + email}
             className="bg-white rounded-full text-black px-4 py-2 shadow-[0_15px_60px_-10px_rgba(255,255,255,0.7)] hover:scale-105 transition-all"
