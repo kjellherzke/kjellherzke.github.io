@@ -1,4 +1,5 @@
 export const availability: boolean = true;
+export const email: string = "inquiries.kjellherzke@gmail.com";
 
 interface MetaInfo {
   title: string;
