@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from "react";
+import { useMemo } from "react";
 import { metaProjects, availability } from "./config";
 
 function ProjectsList() {
@@ -61,11 +61,11 @@ function ProjectsList() {
   );
 }
 
-const capitalize = (str: string) =>
+/* const capitalize = (str: string) =>
   str
     .split(" ")
     .map((s: string) => s.charAt(0).toUpperCase() + s.slice(1))
-    .join(" ");
+    .join(" "); */
 
 /* function NavigationLinks({ links }: { links: string[] }) {
   const [activeLink, setActiveLink] = useState(window.location.hash.substr(1));
