@@ -16,13 +16,14 @@ export const metaProjects: MetaInfo[] = [
       "Develop a Progressive Web Application (PWA) streaming website utilizing OAuth for authentication and MongoDB for database management. Leverage Next.js for server-side rendering, Zod for schema validation, and TailwindCSS for styling. Ensure the application is written in TypeScript, prioritizing both performance and user accessibility.",
     from: "2023",
     to: "2023",
+    // logoUrl: "/projects/griiice-logo.png",
   },
   {
     title: "Nightfall Dimmed Theme",
     description: "Dark Visual Studio Code theme with +1000 downloads",
     linkUrl: "https://github.com/kjellherzke/nightfall-theme.git",
-    logoUrl:
-      "https://raw.githubusercontent.com/kjellherzke/nightfall-theme/main/images/icon.png",
+    // logoUrl:
+    // "https://raw.githubusercontent.com/kjellherzke/nightfall-theme/main/images/icon.png",
   },
   {
     title: "Social Network Platform",
@@ -30,6 +31,7 @@ export const metaProjects: MetaInfo[] = [
       "Create a dynamic full-stack application leveraging Next.js and MySQL, designed with a strong focus on enhancing user experience and user accessibility.",
     from: "2022",
     to: "2022",
+    // logoUrl: "/projects/nympt-logo.png",
   },
   {
     title: "Client-side Web Game",
