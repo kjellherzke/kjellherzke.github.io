@@ -1,5 +1,5 @@
 import { useMemo } from "react";
-import { metaProjects, availability } from "./config";
+import { metaProjects, availability, email } from "./config";
 
 function ProjectsList() {
   return (
@@ -178,9 +178,12 @@ export default function App() {
           operations and enhance user experiences.
         </h3>
         <div className="flex space-x-8 mb-36 items-center">
-          <button className="bg-white rounded-full text-black px-4 py-2 shadow-[0_15px_60px_-10px_rgba(255,255,255,0.7)] hover:scale-105 transition-all">
+          <a
+            href={"mailto:" + email}
+            className="bg-white rounded-full text-black px-4 py-2 shadow-[0_15px_60px_-10px_rgba(255,255,255,0.7)] hover:scale-105 transition-all"
+          >
             Get in touch
-          </button>
+          </a>
           <AvailabilityInfo />
         </div>
         {/* <NavigationLinks links={["about-me", "socials", "projects"]} /> */}
