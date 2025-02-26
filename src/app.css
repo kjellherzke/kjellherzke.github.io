@@ -1,0 +1,11 @@
+@import 'tailwindcss';
+
+@theme {
+    --font-sans: 'DM Sans', "Roboto", sans-serif;
+    --font-serif: "DM Serif Text", "Merriweather", serif;
+}
+
+body {
+    @apply font-sans;
+}
+
